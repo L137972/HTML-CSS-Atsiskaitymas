@@ -273,6 +273,15 @@ footer {
                         font-size: 1rem;
                         padding: 15% 0 5% 0;
                         cursor: pointer;
+
+                        a:link {
+                            text-decoration: none;
+                            color: $text-colour;
+                        }
+
+                        a:visited {
+                            color: $text-colour;
+                        }
                     }
                 }
         }
@@ -292,6 +301,7 @@ footer {
 
     body {
         margin: 2%;
+        margin-top: 0%;
         padding: 3%;
     }
     
@@ -301,6 +311,8 @@ footer {
         display: grid;
         grid-template-columns: repeat(2, auto);
         font-size: 1.5rem;
+        margin-top: 0%;
+        padding-top: 0;
         
         .dropdown-menu {
             float: none;
