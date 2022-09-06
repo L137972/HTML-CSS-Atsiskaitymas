@@ -1,0 +1,422 @@
+$pink-text: rgb(255, 0, 140)!important;
+$orange-text: rgb(255, 123, 0);
+$text-colour: rgb(109, 109, 109);
+
+/* First and last section formatting */
+@mixin section-with-button {
+    h1 {
+        font-size: 2.5em;
+        }
+    
+    p {
+        max-width: 70%;
+        min-width: 70%;
+        color: $text-colour;
+        font-size: 1.5rem;
+    }
+    button {
+        color: #000;
+        font-size: 1.1rem;
+        padding: 5% 12%;
+        border: none;
+        outline: none;
+        position: absolute;
+        border-radius: 5rem;
+        background: linear-gradient(to right, #ff7b00, #DC1FFF);
+        cursor: pointer;
+        z-index: 1;
+    }
+    
+    button::before {
+        content: "";
+        position: absolute;
+        top: 5%;
+        right: 3%;
+        bottom: 5%;
+        left: 3%;
+        background-color: white;
+        border-radius: 5rem;
+        z-index: -1;
+    }
+}
+/* Middle sections formatting */
+@mixin middle-section {
+    h2 {
+        font-size: 2em;
+    }
+    p {
+        color: $text-colour;
+        display: flex;
+        flex-wrap: wrap;
+        font-size: 1.5rem;
+    }
+}
+/* Sets padding */
+@mixin even-padding {
+    padding: 2%;
+    padding-left: 5%;
+}
+
+/* Button for desktop version */
+@mixin button-desktop {
+    button {
+            padding: 2.5% 5%;
+            font-size: 1.5rem;
+        }
+}
+
+body {
+    font-family: 'Open Sans';
+    max-width: 100%;
+}
+
+.navigation {
+    display: block;
+    padding: 2%;
+
+    /* Dropdown Button */
+    .hamburger-menu {
+        padding: 2%;
+        border: none;
+        float: right;
+    }
+
+     /* The container needed to position the dropdown content */
+    .dropdown-menu {
+        float: right;
+        position: relative;
+
+         /* Dropdown Content (Hidden by Default) */
+        .dropdown-menu-content {
+            display: none;
+            position: relative;
+            bottom: 5%;
+            background-color: rgba(255, 255, 255, 0.719);
+
+            /* Links inside the dropdown */
+            a {
+                color: rgb(85, 85, 85);
+                padding: 0.8rem 1rem;
+                text-decoration: none;
+            }
+        
+            /* Sign Up link inside the dropdown menu */
+            .pink-text {
+                color: $pink-text;
+            }
+    }
+ }
+
+}
+
+ /* Show the dropdown menu on hover */
+ .dropdown-menu:hover .dropdown-menu-content {
+    display: flex;
+    flex-direction: column;
+ }
+
+/* Paragraps with pink text */
+ p.pink-text {
+    color: $pink-text;
+    font-size: 1.2rem!important;
+    text-transform: uppercase;
+    font-weight: bold;
+    letter-spacing: 0.3rem;
+ }
+
+/* First section */
+.nft-introduction {
+    height: 30vh;
+    min-width: 100%;
+    max-width: 100%;
+    margin-bottom: 25%;
+    background-image: url(./assets/graphic.svg);
+    background-size: 70%;
+    background-repeat: no-repeat;
+    background-position: right -110% top 10%;
+    @include even-padding;
+    @include section-with-button;
+}
+
+/* Second section */
+.early-bird-nft {
+    height: 18vh;
+    max-width: 100%;
+    padding: 2%;
+    margin-top: 25%;
+    background-image: url(./assets/background.svg);
+    background-repeat: repeat;
+    background-size: cover;
+    @include middle-section;
+    @include even-padding;
+
+    p {
+        color: rgb(34, 34, 34)!important;
+    }
+}
+/* Company logos section */
+.company-logos {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    padding: 2%;
+    gap: 1em;
+    @include even-padding;
+
+    :last-child {
+        display: none;
+    }
+}
+/* Auction section */
+.auction-section {
+    max-width: 100%;
+    @include middle-section;
+    @include even-padding;
+
+    a:link {
+        color: $text-colour;
+    }
+}
+/* NFT cards section */
+.nft-cards-section {
+    max-width: 100%;
+    display: grid;
+    grid-template-columns: repeat(4, auto);
+    overflow: hidden;
+    gap: 1rem;
+
+    .nft-card-container {
+        width: 100%;
+        .nft-card {
+            padding: 2%;
+            background-color: #eee;
+            display: grid;
+            grid-template-columns: repeat(2, auto);
+            line-height: 3rem;
+            justify-content: space-between;
+            border: 0.1em solid #eee;
+            border-radius: 0.7em;
+
+            .top-card-info {
+            font-size: 1rem;
+            }
+        
+            .middle-card-info {
+                font-size: 1.5rem;
+                color: rgb(27, 27, 27);
+            }
+        
+            .orange-text {
+                color: $orange-text;
+            }
+        
+            .bottom-card-info {
+                font-size: 1.25rem;
+            }
+        }
+    }
+}
+/* Last section */
+.nft-upsell {
+    height: 50vh;
+    max-width: 100%;
+    background-image: url(./assets/upsell-footer-image.svg);
+    background-size: 50%;
+    background-repeat: no-repeat;
+    background-position: right -25% top 10%;
+    @include even-padding;
+    @include section-with-button;
+    border-top: 0.1rem solid #eef;
+    border-bottom: 0.1rem solid #eef;
+
+    p {
+        width: 50%;
+        margin-top: 7%;
+    }
+}
+/* footer */
+footer {
+    color: $text-colour;
+    font-size: 1.25rem;
+    @include even-padding;
+    margin-bottom: 5%;
+
+    svg {
+        padding: 0% 1.5%;
+    }
+
+    .footer-menu {
+
+        .footer-container {
+            display: grid;
+            grid-template-columns: repeat(2, auto);
+
+            .footer-column {
+                width: 15%;
+                height: auto;
+                
+                h1 {
+                    margin: 1%;
+                    padding: 1%;
+                    font-size: 1.25rem;
+                    line-height: 2rem;
+                    padding: 10% 0 5% 0;
+                    font-weight: bold;
+                }
+                
+                ul {
+                    list-style-type: none;
+                    margin: 0;
+                    padding: 0;
+                
+                    li {
+                        font-size: 1rem;
+                        padding: 15% 0 5% 0;
+                        cursor: pointer;
+                    }
+                }
+        }
+    }
+        }
+        
+    .footer-section {
+        padding-top: 5%;
+        :last-child {
+            display: none;
+        }
+    }
+
+}
+
+@media only screen and (min-width: 1024px) {
+
+    body {
+        margin: 2%;
+        padding: 3%;
+    }
+    
+    /* Navigation menu items alignment */
+    .navigation {
+        max-width: 100vw;
+        display: grid;
+        grid-template-columns: repeat(2, auto);
+        font-size: 1.5rem;
+        
+        .dropdown-menu {
+            float: none;
+            display: inline-block;
+        
+            .hamburger-menu {
+                display: none;
+            }
+        
+            .dropdown-menu-content {
+                display: grid;
+                grid-template-columns: repeat(4, auto);
+                float: right;
+                
+            }
+    }
+}
+
+/* Show the dropdown menu on hover */
+.dropdown-menu:hover .dropdown-menu-content {
+    flex-direction: row;
+}
+
+    /* First section */
+    .nft-introduction {
+        max-width: 90%;
+        min-width: 90%;
+        height: 55vh;
+        background-position: right -45% top 35%;
+        margin-bottom: 2%;
+        font-size: 1.8rem;
+        @include button-desktop;
+    }
+
+    /* Second section */
+    .early-bird-nft {
+        margin-top: 2%;
+    }
+
+     .company-logos {
+        display: grid;
+        grid-template-columns: repeat(5, auto);
+        margin: 0% -5%;
+        margin-top: 7%; 
+
+
+        :last-child {
+            display: inline-block;
+        }
+    }
+
+    /* Auction section */
+    .auction-section {
+        margin: 0% -5%;
+
+
+        a {
+            margin-left: 0.5rem;
+        }
+    }
+
+    /* NFT Cards section */
+    .nft-card-container {
+        .nft-card {
+            width: 66%;
+        }
+    }
+
+    /* NFT upsell section */
+    .nft-upsell {
+        @include button-desktop;
+        height: 40vh;
+        background-position: right 25% top 0%;
+        background-size: contain;
+        margin-bottom: 1%;
+
+        p {
+            margin-top: 1%;
+        }
+    }
+
+    footer {
+        .footer {
+            display: grid;
+            grid-template-columns: repeat(2, auto);
+
+            .footer-menu {
+
+                .footer-container {
+                    display: grid;
+                    grid-template-columns: repeat(4, auto);
+
+                    .footer-column {
+                        width: 35%;
+
+                        h1 {
+                            font-size: 1.5rem;
+                            padding-bottom: 5%;
+                        }
+            
+                        ul {
+                            li {
+                                font-size: 1.25rem;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        .footer-section {
+            width: 100%;
+            display: inline-block;
+    
+            :last-child {
+                display: block;
+                float: right;
+            }
+        }
+    }
+}
