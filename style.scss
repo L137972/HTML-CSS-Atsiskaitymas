@@ -301,6 +301,7 @@ footer {
 
     body {
         margin: 2%;
+        margin-top: 0%;
         padding: 3%;
     }
     
@@ -310,6 +311,8 @@ footer {
         display: grid;
         grid-template-columns: repeat(2, auto);
         font-size: 1.5rem;
+        margin-top: 0%;
+        padding-top: 0;
         
         .dropdown-menu {
             float: none;
