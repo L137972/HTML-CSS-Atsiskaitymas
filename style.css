@@ -25,15 +25,16 @@ body {
 }
 .navigation .dropdown-menu .dropdown-menu-content {
   display: none;
+  list-style: none;
   position: relative;
-  bottom: 5%;
+  float: right;
   background-color: rgba(255, 255, 255, 0.719);
   /* Links inside the dropdown */
   /* Sign Up link inside the dropdown menu */
 }
 .navigation .dropdown-menu .dropdown-menu-content a {
   color: rgb(85, 85, 85);
-  padding: 0.8rem 1rem;
+  padding: 0.5rem;
   text-decoration: none;
 }
 .navigation .dropdown-menu .dropdown-menu-content .pink-text {
@@ -41,9 +42,8 @@ body {
 }
 
 /* Show the dropdown menu on hover */
-.dropdown-menu:hover .dropdown-menu-content {
-  display: flex;
-  flex-direction: column;
+.dropdown-menu .hamburger-menu:hover + .dropdown-menu-content {
+  display: block;
 }
 
 /* Paragraps with pink text */
@@ -57,10 +57,11 @@ p.pink-text {
 
 /* First section */
 .nft-introduction {
-  height: 30vh;
+  height: 40vh;
   min-width: 100%;
   max-width: 100%;
-  margin-bottom: 25%;
+  margin-top: 5%;
+  margin-bottom: 15%;
   background-image: url(./assets/graphic.svg);
   background-size: 70%;
   background-repeat: no-repeat;
@@ -69,7 +70,7 @@ p.pink-text {
   padding-left: 5%;
 }
 .nft-introduction h1 {
-  font-size: 2.5em;
+  font-size: 2.25em;
 }
 .nft-introduction p {
   max-width: 70%;
@@ -163,7 +164,7 @@ p.pink-text {
   max-width: 100%;
   display: grid;
   grid-template-columns: repeat(4, auto);
-  overflow: hidden;
+  overflow: scroll;
   gap: 1rem;
 }
 .nft-cards-section .nft-card-container {
@@ -207,7 +208,7 @@ p.pink-text {
   border-bottom: 0.1rem solid #eef;
 }
 .nft-upsell h1 {
-  font-size: 2.5em;
+  font-size: 2.25em;
 }
 .nft-upsell p {
   max-width: 70%;
