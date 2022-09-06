@@ -281,6 +281,13 @@ footer .footer-menu .footer-container .footer-column ul li {
   padding: 15% 0 5% 0;
   cursor: pointer;
 }
+footer .footer-menu .footer-container .footer-column ul li a:link {
+  text-decoration: none;
+  color: rgb(109, 109, 109);
+}
+footer .footer-menu .footer-container .footer-column ul li a:visited {
+  color: rgb(109, 109, 109);
+}
 footer .footer-section {
   padding-top: 5%;
 }
